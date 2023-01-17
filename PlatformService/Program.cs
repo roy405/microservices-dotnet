@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
+using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,14 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMe
 //This is to supply the correct repository, in the case of enquiry for the PlatformRepo interface,
 //the actual platform repo implementation class is supplied
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
+//Adding the Http Client Factory that will be used by the Http Command Client
+builder.Services.AddHttpClient<ICommandClient, HttpCommandClient>();
 builder.Services.AddControllers();
 //Adding the automapper to the applicationdomain in order to map DTOs to Models and Repositories by creating profiles.
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 
 var app = builder.Build();
