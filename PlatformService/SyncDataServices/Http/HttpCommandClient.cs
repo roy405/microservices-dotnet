@@ -22,10 +22,11 @@ namespace PlatformService.SyncDataServices.Http
                 Encoding.UTF8,
                 "application/json");
             var response = await _httpClient.PostAsync($"{_config["CommandService"]}", httpContent);
+            Console.WriteLine($"{_config["CommandService"]}");
             
             if(response.IsSuccessStatusCode)
             {
-                Console.WriteLine("--> Sync Post to CommandService was OK!");
+                Console.WriteLine("--> Sync POST to CommandService was OK!");
             }
             else
             {

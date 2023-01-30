@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dotnetmicroservices\\CommandsService\\CommandsService.csproj": {}
+    "D:\\dotnetMicroservices\\CommandsService\\CommandsService.csproj": {}
   },
   "projects": {
-    "D:\\dotnetmicroservices\\CommandsService\\CommandsService.csproj": {
+    "D:\\dotnetMicroservices\\CommandsService\\CommandsService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnetmicroservices\\CommandsService\\CommandsService.csproj",
+        "projectUniqueName": "D:\\dotnetMicroservices\\CommandsService\\CommandsService.csproj",
         "projectName": "CommandsService",
-        "projectPath": "D:\\dotnetmicroservices\\CommandsService\\CommandsService.csproj",
+        "projectPath": "D:\\dotnetMicroservices\\CommandsService\\CommandsService.csproj",
         "packagesPath": "C:\\Users\\Roy\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnetmicroservices\\CommandsService\\obj\\",
+        "outputPath": "D:\\dotnetMicroservices\\CommandsService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roy\\AppData\\Roaming\\NuGet\\NuGet.Config",

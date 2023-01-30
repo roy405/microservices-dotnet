@@ -77,3 +77,4 @@ D:\dotnetMicroservices\PlatformService\obj\Debug\net7.0\refint\PlatformService.d
 D:\dotnetMicroservices\PlatformService\obj\Debug\net7.0\PlatformService.pdb
 D:\dotnetMicroservices\PlatformService\obj\Debug\net7.0\PlatformService.genruntimeconfig.cache
 D:\dotnetMicroservices\PlatformService\obj\Debug\net7.0\ref\PlatformService.dll
+D:\dotnetMicroservices\PlatformService\bin\Debug\net7.0\appsettings.Production.json

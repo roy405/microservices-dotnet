@@ -4,6 +4,7 @@ using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 //This is the added service for DbContext to connect to the database
