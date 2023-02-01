@@ -3,12 +3,23 @@ using PlatformService.Data;
 using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
+var devenv = builder.Environment.IsProduction();
 
 
-// Add services to the container.
+//Add services to the container.
+if (devenv)
+{
+    
+    Console.WriteLine("--> In Production Environment: Using SQLServer DataBase");
+    builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+}
+else
+{
+    Console.WriteLine("--> In Development Enviroment: Using In-Memory Database");
+    builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
+}
 
 //This is the added service for DbContext to connect to the database
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
 //This is to supply the correct repository, in the case of enquiry for the PlatformRepo interface,
 //the actual platform repo implementation class is supplied
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
@@ -31,7 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-PrepDb.PrepPopulation(app);
+PrepDb.PrepPopulation(app, devenv);
 
 app.UseHttpsRedirection();
 
